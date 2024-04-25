@@ -1,6 +1,5 @@
-package hust.soict.dsai.aims.cart;
+package hust.soict.dsai.aims;
 
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
 import java.util.*;
 
 public class Cart {
