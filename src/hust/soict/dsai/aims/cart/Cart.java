@@ -17,17 +17,15 @@ public class Cart {
         }
     }
     public void addDigitalVideoDisc(DigitalVideoDisc[] dvdlist) {
-        for (DigitalVideoDisc d: dvdlist) {
+        for (DigitalVideoDisc disc : dvdlist) {
             if (qtyOrdered == MAX_NUMBERS_ORDERED) {
                 System.out.println("Your cart is full!");
-                break;
             } else {
-                itemsOrdered[qtyOrdered] = d;
+                itemsOrdered[qtyOrdered] = disc;
                 qtyOrdered += 1;
                 System.out.println("The disc has been added.");
             }
         }
-    }
     public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
         if (qtyOrdered == MAX_NUMBERS_ORDERED) {
             System.out.println("Your cart is full!");
