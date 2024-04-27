@@ -7,7 +7,7 @@ public class DigitalVideoDisc {
     private int length;
     private float cost;
     private static int nbDigitalVideoDisc = 0;
-    private int ID = 0000;
+    private int ID;
     public String getTitle() {
         return title;
     }
