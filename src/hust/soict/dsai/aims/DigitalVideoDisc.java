@@ -1,4 +1,4 @@
-package hust.soict.dsai.aims;
+package hust.soict.dsai.aims.disc;
 
 public class DigitalVideoDisc {
     private String title;
@@ -7,7 +7,7 @@ public class DigitalVideoDisc {
     private int length;
     private float cost;
     private static int nbDigitalVideoDisc = 0;
-    private int id;
+    private int ID;
     public String getTitle() {
         return title;
     }
@@ -42,6 +42,7 @@ public class DigitalVideoDisc {
         super();
         this.title = title;
         nbDigitalVideoDisc += 1;
+        this.ID = nbDigitalVideoDisc;
     }
     public DigitalVideoDisc(String title, String category, float cost) {
         super();
@@ -49,6 +50,7 @@ public class DigitalVideoDisc {
         this.category = category;
         this.cost = cost;
         nbDigitalVideoDisc += 1;
+        this.ID = nbDigitalVideoDisc;
     }
     public DigitalVideoDisc(String title, String category, String director, float cost) {
         super();
@@ -57,6 +59,7 @@ public class DigitalVideoDisc {
         this.director = director;
         this.cost = cost;
         nbDigitalVideoDisc += 1;
+        this.ID = nbDigitalVideoDisc;
     }
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         super();
@@ -66,8 +69,6 @@ public class DigitalVideoDisc {
         this.length = length;
         this.cost = cost;
         nbDigitalVideoDisc += 1;
-    }
-    public boolean isMatch(String title2) {
-        return title2.equals(title);
+        this.ID = nbDigitalVideoDisc;
     }
 }
