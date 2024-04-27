@@ -1,6 +1,4 @@
-package hust.soict.dsai.aims.test.disc;
-
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+package hust.soict.dsai.aims;
 
 public class TestPassingParameter {
 
@@ -22,7 +20,17 @@ public class TestPassingParameter {
         o2 = tmp;
     }
     public static void trueswap(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
-        //pass
+        String oldtitle = dvd1.getTitle();
+        String oldcategory = dvd1.getCategory();
+        String olddirector = dvd1.getDirector();
+        int oldlength = dvd1.getLength();
+        float oldcost = dvd1.getCost();
+        dvd1 = new DigitalVideoDisc(dvd2.getTitle(), dvd2.getCategory(), dvd2.getDirector(), dvd2.getLength(), dvd2.getCost());
+        dvd2.setTitle(oldtitle);
+        dvd2.setCategory(oldcategory);
+        dvd2.setDirector(olddirector);
+        dvd2.setLength(oldlength);
+        dvd2.setCost(oldcost);
     }
     public static void changeTitle(DigitalVideoDisc dvd, String title) {
         String oldTitle = dvd.getTitle();
