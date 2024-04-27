@@ -24,6 +24,7 @@ public class CartTest {
         //Test the search method
         cart.search("The Lion King");
         cart.search(1);
-
+        cart.search("Thuong ngay nang ve");
+        cart.search(55);
     }
 }
