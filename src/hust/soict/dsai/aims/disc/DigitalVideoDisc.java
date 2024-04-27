@@ -67,6 +67,11 @@ public class DigitalVideoDisc {
         this.cost = cost;
         nbDigitalVideoDisc += 1;
     }
+    @Override
+    public String toString(){
+        return "[" + title + "] - [" + category + "] - [" + director + "] - [" + length + "]: [" + cost + "]";
+    }
+
     public boolean isMatch(String title2) {
         return title2.equals(title);
     }
