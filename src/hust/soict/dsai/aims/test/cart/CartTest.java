@@ -24,7 +24,8 @@ public class CartTest {
         //Test the search method
         cart.search("Aladin");
         cart.search(1);
+        cart.search(2);
         cart.search("Thuongngaynangve");
-//        cart.search(55);
+        cart.search(55);
     }
 }
