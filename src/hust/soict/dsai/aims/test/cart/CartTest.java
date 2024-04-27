@@ -23,8 +23,8 @@ public class CartTest {
         cart.print();
         //Test the search method
         cart.search("The Lion King");
-        cart.search(1);
+//        cart.search(1);
         cart.search("Thuongngaynangve");
-        cart.search(55);
+//        cart.search(55);
     }
 }

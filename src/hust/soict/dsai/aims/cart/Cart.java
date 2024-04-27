@@ -80,15 +80,18 @@ public class Cart {
     public void print() {
         System.out.println("***********************CART***********************");
         for (int i = 0; i < qtyOrdered; i++) {
-            System.out.println(i + ". DVD - " + itemsOrdered[i].toString() + "$");
+            System.out.println(i+1 + ". DVD - " + itemsOrdered[i].toString()
+                    + ": [" + itemsOrdered[i].getCost() + "]$");
         }
         System.out.println("Total cost: [" + totalCost() + "]");
         System.out.println("**************************************************");
     }
     public void search(String query) {
         boolean found = false;
-        for (DigitalVideoDisc d: itemsOrdered) {
-            if (d.isMatch(query)) {
+        for (int i = 0; i < qtyOrdered; i++) {
+            if (itemsOrdered[i].isMatch(query)) {
+                System.out.println("DVD - "
+                        + itemsOrdered[i].toString());
                 found = true;
             }
         }
