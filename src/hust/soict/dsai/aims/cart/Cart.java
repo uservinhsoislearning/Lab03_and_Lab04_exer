@@ -76,9 +76,10 @@ public class Cart {
     public void print() {
         System.out.println("***********************CART***********************");
         for (int i = 0; i < qtyOrdered; i++) {
-            System.out.println(i + ". DVD - " + itemsOrdered[i].toString() + "$");
+            System.out.println(i+1 + ". DVD - " + itemsOrdered[i].toString()
+                    + ": [" + itemsOrdered[i].getCost() + "]$");
         }
-        System.out.println("Total cost: [" + totalCost() + "]");
+        System.out.printf("Total cost: [ %.2f ]\n", totalCost());
         System.out.println("**************************************************");
     }
 }
