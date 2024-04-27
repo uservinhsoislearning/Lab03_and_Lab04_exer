@@ -80,15 +80,4 @@ public class Cart {
         System.out.println("Total cost: [" + totalCost() + "]");
         System.out.println("**************************************************");
     }
-    public void searchCart(String title) {
-        boolean found = false;
-        for (DigitalVideoDisc d: itemsOrdered) {
-            if (d.isMatch(title)) {
-                found = true;
-            }
-        }
-        if (!found) {
-            System.out.println("Your disc is not found!");
-        }
-    }
 }
