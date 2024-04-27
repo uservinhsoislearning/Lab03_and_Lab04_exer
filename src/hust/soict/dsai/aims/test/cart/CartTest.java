@@ -22,7 +22,7 @@ public class CartTest {
         //Test the print method
         cart.print();
         //Test the search method
-        cart.search("The Lion King");
+        cart.search("Aladin");
 //        cart.search(1);
         cart.search("Thuongngaynangve");
 //        cart.search(55);
