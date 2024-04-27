@@ -91,4 +91,15 @@ public class Cart {
             System.out.println("Your disc is not found!");
         }
     }
+    public void searchCart(int ID)  {
+        boolean found = false;
+        for (DigitalVideoDisc d: itemsOrdered) {
+            if (d.isMatch(ID)) {
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("Your disc is not found!");
+        }
+    }
 }
