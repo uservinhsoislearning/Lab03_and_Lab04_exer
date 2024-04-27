@@ -83,7 +83,7 @@ public class Cart {
             System.out.println(i+1 + ". DVD - " + itemsOrdered[i].toString()
                     + ": [" + itemsOrdered[i].getCost() + "]$");
         }
-        System.out.println("Total cost: [" + totalCost() + "]");
+        System.out.printf("Total cost: [ %.2f ]", totalCost());
         System.out.println("**************************************************");
     }
     public void search(String query) {
