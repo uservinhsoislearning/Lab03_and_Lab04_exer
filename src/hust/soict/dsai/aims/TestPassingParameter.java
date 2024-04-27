@@ -1,6 +1,4 @@
-package hust.soict.dsai.aims.test.disc;
-
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+package hust.soict.dsai.aims;
 
 public class TestPassingParameter {
 
