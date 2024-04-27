@@ -75,7 +75,9 @@ public class DigitalVideoDisc {
     public String toString(){
         return "[" + title + "] - [" + category + "] - [" + director + "] - [" + length + "]: [" + cost + "]";
     }
-    public boolean isMatch()
+    public boolean isMatch(int ID2)  {
+        return ID2 == ID;
+    }
     public boolean isMatch(String title2) {
         return title2.equals(title);
     }
