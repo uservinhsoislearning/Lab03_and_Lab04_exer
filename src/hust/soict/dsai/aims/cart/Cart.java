@@ -72,11 +72,14 @@ public class Cart {
         }
         return res;
     }
-//    @Override
-//    public String toString() {
-//        System.out.println("***********************CART***********************");
-//        for (int i = 0; i < qtyOrdered; i++) {
-//            System.out.println(i + ". DVD - " + itemsOrdered[i].getTitle() + " - ");
-//        }
-//    }
-}
+    public void searchCart(int ID)  {
+        boolean found = false;
+        for (DigitalVideoDisc d: itemsOrdered) {
+            if (d.isMatch(ID)) {
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("Your disc is not found!");
+        }
+    }
