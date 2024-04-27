@@ -77,5 +77,7 @@ public class Cart {
         for (int i = 0; i < qtyOrdered; i++) {
             System.out.println(i + ". DVD - " + itemsOrdered[i].toString() + "$");
         }
+        System.out.println("Total cost: [" + totalCost() + "]");
+        System.out.println("**************************************************");
     }
 }
