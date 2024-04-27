@@ -77,6 +77,14 @@ public class Cart {
         }
         return res;
     }
+    public void print() {
+        System.out.println("***********************CART***********************");
+        for (int i = 0; i < qtyOrdered; i++) {
+            System.out.println(i + ". DVD - " + itemsOrdered[i].toString() + "$");
+        }
+        System.out.println("Total cost: [" + totalCost() + "]");
+        System.out.println("**************************************************");
+    }
     public void searchCart(String title) {
         boolean found = false;
         for (DigitalVideoDisc d: itemsOrdered) {
