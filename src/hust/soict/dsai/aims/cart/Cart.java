@@ -72,7 +72,7 @@ public class Cart {
         }
         return res;
     }
-    public String printCart() {
+    public void printCart() {
         System.out.println("***********************CART***********************");
         for (int i = 0; i < qtyOrdered; i++) {
             System.out.println(i + ". DVD - " + itemsOrdered[i].toString() + "$");
