@@ -90,7 +90,7 @@ public class Cart {
         boolean found = false;
         for (int i = 0; i < qtyOrdered; i++) {
             if (itemsOrdered[i].isMatch(query)) {
-                System.out.println(i+1 + "DVD - "
+                System.out.println(i+1 + ". DVD - "
                         + itemsOrdered[i].toString());
                 found = true;
             }
