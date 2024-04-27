@@ -85,10 +85,10 @@ public class Cart {
         System.out.println("Total cost: [" + totalCost() + "]");
         System.out.println("**************************************************");
     }
-    public void search(String title) {
+    public void search(String query) {
         boolean found = false;
         for (DigitalVideoDisc d: itemsOrdered) {
-            if (d.isMatch(title)) {
+            if (d.isMatch(query)) {
                 found = true;
             }
         }
