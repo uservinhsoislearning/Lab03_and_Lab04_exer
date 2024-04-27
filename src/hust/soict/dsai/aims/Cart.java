@@ -70,11 +70,4 @@ public class Cart {
         }
         return res;
     }
-//    @Override
-//    public String toString() {
-//        System.out.println("***********************CART***********************");
-//        for (int i = 0; i < qtyOrdered; i++) {
-//            System.out.println(i + ". DVD - " + itemsOrdered[i].getTitle() + " - ");
-//        }
-//    }
 }
