@@ -1,25 +1,9 @@
-package hust.soict.dsai.aims;
+package hust.soict.dsai.aims.media;
 
-public class DigitalVideoDisc {
-    private String title;
-    private String category;
+public class DigitalVideoDisc extends Media{
     private String director;
     private int length;
-    private float cost;
     private static int nbDigitalVideoDisc = 0;
-    private int ID;
-    public String getTitle() {
-        return title;
-    }
-    public void setTitle(String title) {
-        this.title = title;
-    }
-    public String getCategory() {
-        return category;
-    }
-    public void setCategory(String category) {
-        this.category = category;
-    }
     public String getDirector() {
         return director;
     }
@@ -32,17 +16,11 @@ public class DigitalVideoDisc {
     public void setLength(int length) {
         this.length = length;
     }
-    public float getCost() {
-        return cost;
-    }
-    public void setCost(float cost) {
-        this.cost = cost;
-    }
     public DigitalVideoDisc(String title) {
         super();
         this.title = title;
         nbDigitalVideoDisc += 1;
-        this.ID = nbDigitalVideoDisc;
+        this.id = nbDigitalVideoDisc;
     }
     public DigitalVideoDisc(String title, String category, float cost) {
         super();
@@ -50,7 +28,7 @@ public class DigitalVideoDisc {
         this.category = category;
         this.cost = cost;
         nbDigitalVideoDisc += 1;
-        this.ID = nbDigitalVideoDisc;
+        this.id = nbDigitalVideoDisc;
     }
     public DigitalVideoDisc(String title, String category, String director, float cost) {
         super();
@@ -59,7 +37,7 @@ public class DigitalVideoDisc {
         this.director = director;
         this.cost = cost;
         nbDigitalVideoDisc += 1;
-        this.ID = nbDigitalVideoDisc;
+        this.id = nbDigitalVideoDisc;
     }
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         super();
@@ -69,6 +47,6 @@ public class DigitalVideoDisc {
         this.length = length;
         this.cost = cost;
         nbDigitalVideoDisc += 1;
-        this.ID = nbDigitalVideoDisc;
+        this.id = nbDigitalVideoDisc;
     }
 }

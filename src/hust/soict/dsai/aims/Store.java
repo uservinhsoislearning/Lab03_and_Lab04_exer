@@ -1,5 +1,7 @@
 package hust.soict.dsai.aims;
 
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
+
 public class Store {
     public static final int MAX_NUMBER_OF_AVAILABLE_DISC = 21;
     private DigitalVideoDisc itemsInStore[] =
