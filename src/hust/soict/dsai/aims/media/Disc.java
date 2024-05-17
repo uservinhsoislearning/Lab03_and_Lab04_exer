@@ -9,7 +9,7 @@ public class Disc extends Media {
         this.length = length;
         this.director = director;
     }
-    public float getLength() {
+    public int getLength() {
         return length;
     }
     public String getDirector() {
