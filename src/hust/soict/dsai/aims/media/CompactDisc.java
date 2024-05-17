@@ -32,4 +32,7 @@ public class CompactDisc extends Disc{
             tracks.remove(oldtrack);
         }
     }
+    public float getLength(){
+        
+    }
 }
