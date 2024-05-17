@@ -1,25 +1,24 @@
 package hust.soict.dsai.aims;
 
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.Media;
 
 import java.util.*;
 
-public class Cart {
+public class Cart extends Media {
     public static final int MAX_NUMBERS_ORDERED = 20;
-    private ArrayList<DigitalVideoDisc> itemsOrdered = new ArrayList<DigitalVideoDisc>();
-    private int qtyOrdered = 0;
-//    public void addDigitalVideoDisc(DigitalVideoDisc disc) {
-//        if (qtyOrdered == MAX_NUMBERS_ORDERED) {
-//            System.out.println("Your cart is full!");
-//        } else {
-//            itemsOrdered[qtyOrdered] = disc;
-//            qtyOrdered += 1;
-//            System.out.println("The disc has been added.");
-//        }
-//    }
+    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    public void addMedia(Media md) {
+        if (itemsOrdered.size() == MAX_NUMBERS_ORDERED) {
+            System.out.println("Your cart is full!");
+        } else {
+            itemsOrdered.add(md);
+            System.out.println("The media has been added.");
+        }
+    }
 //    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdlist) {
 //        for (DigitalVideoDisc d: dvdlist) {
-//            if (qtyOrdered == MAX_NUMBERS_ORDERED) {
+//            if (itemsOrdered.size() == MAX_NUMBERS_ORDERED) {
 //                System.out.println("Your cart is full!");
 //                break;
 //            } else {
