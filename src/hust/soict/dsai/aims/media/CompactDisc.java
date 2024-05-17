@@ -33,6 +33,12 @@ public class CompactDisc extends Disc{
         }
     }
     public float getLength(){
-        
+        float totallength = 0;
+        for (Track track : tracks){
+            if (track.getLength() > 0){
+                totallength += track.getLength();
+            }
+        }
+        return totallength;
     }
 }
