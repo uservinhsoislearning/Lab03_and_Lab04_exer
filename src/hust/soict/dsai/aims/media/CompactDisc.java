@@ -4,5 +4,6 @@ import java.util.ArrayList;
 
 public class CompactDisc extends Disc{
     private String artist;
-    private ArrayList<Track> tracks = new ArrayList<>();
+    private ArrayList<Track> tracks = new ArrayList<Track>();
+
 }
