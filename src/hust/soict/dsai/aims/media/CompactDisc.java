@@ -32,7 +32,6 @@ public class CompactDisc extends Disc implements Playable{
             tracks.remove(oldtrack);
         }
     }
-    @Override
     public int getLength(){
         int totallength = 0;
         for (Track track : tracks){
