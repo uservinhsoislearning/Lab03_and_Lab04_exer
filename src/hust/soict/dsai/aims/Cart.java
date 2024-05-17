@@ -42,11 +42,11 @@ public class Cart extends Media {
     }
     public float totalCost() {
         Random rand = new Random();
-        int randomIndex = rand.nextInt(qtyOrdered);
+        int randomIndex = rand.nextInt(itemsOrdered.size());
         float res = 0;
-        for (DigitalVideoDisc d: itemsOrdered) {
-            if (d != itemsOrdered[randomIndex] && d != null) {
-                res += d.getCost();
+        for (Media md: itemsOrdered) {
+            if (md != itemsOrdered.get(randomIndex) && md != null) {
+                res += md.getCost();
             }
         }
         return res;
