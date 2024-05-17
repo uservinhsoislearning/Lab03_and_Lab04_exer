@@ -81,5 +81,8 @@ public class DigitalVideoDisc {
     public boolean isMatch(String title2) {
         return title2.equals(title);
     }
-
+    public void play(){
+        System.out.println("Playing DVD: " + this.getTitle());
+        System.out.println("DVD length: " + this.getLength());
+    }
 }
