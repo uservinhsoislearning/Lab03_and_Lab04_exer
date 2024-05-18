@@ -34,6 +34,8 @@ public class Aims {
         mediae.add(dvd);
         mediae.add(book);
 
-        for (Media media : mediae) {}
+        for (Media media : mediae) {
+            System.out.println(media.toString());
+        }
     }
 }
