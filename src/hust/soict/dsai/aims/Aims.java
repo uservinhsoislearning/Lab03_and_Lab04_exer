@@ -3,14 +3,44 @@ package hust.soict.dsai.aims;
 import hust.soict.dsai.aims.cart.Cart;
 import hust.soict.dsai.aims.media.CompactDisc;
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.Track;
 import hust.soict.dsai.aims.media.Media;
 import hust.soict.dsai.aims.media.Book;
 import java.util.*;
 
 public class Aims {
+    private static final Store store = new Store();
+    private static final Cart cart = new Cart();
     private static Scanner scanner = new Scanner(System.in);
+    private static final Store availableMedia = new Store();
     private static int choice;
     private static List<Integer> acceptedChoices;
+    public static void initializeStore() {
+
+        DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
+        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars: Episode IV", "Sci-Fi", "George Lucas", 121, 14.99f);
+        DigitalVideoDisc dvd3 = new DigitalVideoDisc("The Shawshank Redemption", "Drama", "Frank Darabont", 142, 17.50f);
+        DigitalVideoDisc dvd4 = new DigitalVideoDisc("The Godfather", "Crime", "Francis Ford Coppola", 175, 22.95f);
+        DigitalVideoDisc dvd5 = new DigitalVideoDisc("Spirited Away", "Animation", "Hayao Miyazaki", 125, 19.99f);
+        DigitalVideoDisc dvd6 = new DigitalVideoDisc("Inception", "Sci-Fi", "Christopher Nolan", 148, 24.50f);
+        DigitalVideoDisc dvd7 = new DigitalVideoDisc("The Lord of the Rings", "Fantasy", "Peter Jackson", 201, 29.95f);
+        DigitalVideoDisc dvd8 = new DigitalVideoDisc("Pulp Fiction", "Crime", "Quentin Tarantino", 154, 18.99f);
+
+        CompactDisc cd = new CompactDisc("Queen Best Songs", "Music", "None", 60, "Queen");
+
+        cd.addTrack(new Track("Bohemian Rhapsody", 540));
+        cd.addTrack(new Track("Another One Bites the Dust", 330));
+        cd.addTrack(new Track("Killer Queen", 300));
+        cd.addTrack(new Track("We Will Rock You", 200));
+        cd.addTrack(new Track("Don't Stop Me Now", 350));
+
+        Book book = new Book("Good Omens", "Novel", 15.99f);
+        book.addAuthor("Terry Pratchett");
+        book.addAuthor("Neil Gaiman");
+
+        store.addMedia(dvd1, dvd2, dvd3, dvd4, dvd5, dvd6, dvd7, cd, book);
+        availableMedia.addMedia(dvd1, dvd2, dvd3, dvd4, dvd5, dvd6, dvd7, dvd8, cd, book);
+    }
     public static void showMenu() {
         System.out.println("AIMS: ");
         System.out.println("--------------------------------");
@@ -62,6 +92,8 @@ public class Aims {
         System.out.println("--------------------------------");
         System.out.println("1. Add a media");
         System.out.println("2. Remove a media");
+        System.out.println("0. Back");
+        System.out.println("Please choose a number: 0-1-2");
 
         acceptedChoices = new ArrayList<>(Arrays.asList(0, 1, 2));
 
@@ -72,7 +104,7 @@ public class Aims {
 
         switch (choice) {
             case 0:
-                exit();
+                showMenu();
                 break;
             case 1:
                 storeMenu();
@@ -80,10 +112,11 @@ public class Aims {
             case 2:
                 updateStoreMenu();
                 break;
-            case 3:
-                cartMenu();
-                break;
         }
+    }
+    public static void addToStore(){
+        System.out.println("Available media: ");
+        availableMedia.print()
     }
     public static void mediaDetailsMenu() {
         System.out.println("Options: ");
