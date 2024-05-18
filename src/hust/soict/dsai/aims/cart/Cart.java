@@ -1,48 +1,32 @@
 package hust.soict.dsai.aims.cart;
 
-import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.Media;
 import java.util.*;
 
-public class Cart {
+public class Cart extends Media{
     public static final int MAX_NUMBERS_ORDERED = 20;
-    private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
-    private int qtyOrdered = 0;
-    public void addDigitalVideoDisc(DigitalVideoDisc disc) {
-        if (qtyOrdered == MAX_NUMBERS_ORDERED) {
+    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    public void addDigitalVideoDisc(Media md) {
+        if (itemsOrdered.size() == MAX_NUMBERS_ORDERED) {
             System.out.println("Your cart is full!");
         } else {
-            itemsOrdered[qtyOrdered] = disc;
-            qtyOrdered += 1;
+            itemsOrdered.add(md);
             System.out.println("The disc has been added.");
         }
     }
-    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdlist) {
-        for (DigitalVideoDisc d: dvdlist) {
-            if (qtyOrdered == MAX_NUMBERS_ORDERED) {
+    public void addDigitalVideoDisc(ArrayList<Media> mdlist) {
+        for (Media md: mdlist) {
+            if (itemsOrdered.size() == MAX_NUMBERS_ORDERED) {
                 System.out.println("Your cart is full!");
                 break;
             } else {
-                itemsOrdered[qtyOrdered] = d;
-                qtyOrdered += 1;
+                itemsOrdered.add(md);
                 System.out.println("The disc has been added.");
             }
         }
     }
-    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
-        if (qtyOrdered == MAX_NUMBERS_ORDERED) {
-            System.out.println("Your cart is full!");
-        } else if (qtyOrdered == MAX_NUMBERS_ORDERED - 1) {
-            itemsOrdered[qtyOrdered] = dvd1;
-            qtyOrdered += 1;
-            System.out.println("The first disc has been added.");
-        } else {
-            itemsOrdered[qtyOrdered] = dvd1;
-            itemsOrdered[qtyOrdered + 1] = dvd2;
-            qtyOrdered += 2;
-            System.out.println("The two discs has been added.");
-        }
-    }
-    public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
+
+    public void removeDigitalVideoDisc(Media md) {
         if (qtyOrdered == 0) {
             System.out.println("Your cart is empty!");
         } else {
