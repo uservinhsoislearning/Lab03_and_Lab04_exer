@@ -1,5 +1,8 @@
 package hust.soict.dsai.aims.media;
 
+import hust.soict.dsai.aims.MediaComparatorByCostTitle;
+import hust.soict.dsai.aims.MediaComparatorByTitleCost;
+
 import java.util.Comparator;
 
 public abstract class Media {
