@@ -41,4 +41,13 @@ public class Store extends Media{
             System.out.println("The disc has been removed.");
         }
     }
+    public void print() {
+        System.out.println("-----------------------Store-----------------------");
+        System.out.println("Number of item: " + itemsInStore.size());
+        System.out.println();
+        for (Media media : itemsInStore) {
+            System.out.println(media);
+        }
+        System.out.println("---------------------------------------------------");
+    }
 }
