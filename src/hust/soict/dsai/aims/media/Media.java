@@ -36,8 +36,9 @@ public abstract class Media {
     public void setCost(float cost) {
         this.cost = cost;
     }
-    public boolean equals(Media media) {
-        return this.title.equals(media.getTitle());
+    @Override
+    public boolean equals(Object obj) {
+        return this.title.equals(((Media)obj).getTitle());
     }
     public Media(){
 
