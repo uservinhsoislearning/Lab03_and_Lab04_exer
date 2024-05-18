@@ -8,6 +8,6 @@ public class MediaComparatorByCostTitle implements Comparator<Media> {
                     .comparing((Media media) -> -media.getCost())
                     .thenComparing(media -> media.getTitle().toLowerCase())
                     .compare(m1, m2);
-        }
     }
 }
+
