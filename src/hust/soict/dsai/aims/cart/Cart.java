@@ -27,11 +27,10 @@ public class Cart extends Media{
     }
 
     public void removeDigitalVideoDisc(Media md) {
-        if (qtyOrdered == 0) {
+        if (itemsOrdered.isEmpty()) {
             System.out.println("Your cart is empty!");
         } else {
-            int index = 0;
-            for(int i = 0; i < qtyOrdered; i++) {
+            for(int i = 0; i < itemsOrdered.size(); i++) {
                 if (itemsOrdered[i] == disc) {
                     itemsOrdered[i] = null;
                     index = i;
