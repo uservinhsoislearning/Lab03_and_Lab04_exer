@@ -107,7 +107,7 @@ public class Aims {
                 showMenu();
                 break;
             case 1:
-                storeMenu();
+                addToStore();
                 break;
             case 2:
                 updateStoreMenu();
