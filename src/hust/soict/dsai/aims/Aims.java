@@ -24,11 +24,10 @@ public class Aims {
         acceptedChoices = new ArrayList<>(Arrays.asList(0, 1, 2, 3));
 
         do {
-            System.out.println("Please choose a number: 0-1-2-3");
             choice = scanner.nextInt();
             scanner.nextLine();
         } while (!acceptedChoices.contains(choice));
-        
+
         switch (choice) {
             case 0:
                 exit();
@@ -58,6 +57,34 @@ public class Aims {
         System.out.println("Please choose a number: 0-1-2-3-4");
 
     }
+    public static void updateStoreMenu() {
+        System.out.println("Options: ");
+        System.out.println("--------------------------------");
+        System.out.println("1. Add a media");
+        System.out.println("2. Remove a media");
+
+        acceptedChoices = new ArrayList<>(Arrays.asList(0, 1, 2));
+
+        do {
+            choice = scanner.nextInt();
+            scanner.nextLine();
+        } while (!acceptedChoices.contains(choice));
+
+        switch (choice) {
+            case 0:
+                exit();
+                break;
+            case 1:
+                storeMenu();
+                break;
+            case 2:
+                updateStoreMenu();
+                break;
+            case 3:
+                cartMenu();
+                break;
+        }
+    }
     public static void mediaDetailsMenu() {
         System.out.println("Options: ");
         System.out.println("--------------------------------");
@@ -79,6 +106,11 @@ public class Aims {
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2-3-4-5");
 
+    }
+    public static void exit() {
+        System.out.println("Exiting...");
+        scanner.close();
+        System.exit(0);
     }
     public static void main(String[] args) {
 
