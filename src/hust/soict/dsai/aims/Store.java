@@ -18,6 +18,16 @@ public class Store extends Media{
             System.out.println("The disc has been added.");
         }
     }
+    public void addMedia(Media... md) {
+        for (Media md1 : md) {
+            if (itemsInStore.size() == MAX_NUMBER_OF_AVAILABLE_DISC) {
+                System.out.println("Unable to push more discs!");
+            } else {
+                itemsInStore.add(md1);
+                System.out.println("The disc has been added.");
+            }
+        }
+    }
     public void removeMedia(Media md) {
         if (itemsInStore.isEmpty()) {
             System.out.println("Unable to remove discs!");
