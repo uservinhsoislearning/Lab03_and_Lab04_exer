@@ -8,6 +8,9 @@ import hust.soict.dsai.aims.media.Book;
 import java.util.*;
 
 public class Aims {
+    private static Scanner scanner = new Scanner(System.in);
+    private static int choice;
+    private static List<Integer> acceptedChoices;
     public static void showMenu() {
         System.out.println("AIMS: ");
         System.out.println("--------------------------------");
@@ -17,6 +20,30 @@ public class Aims {
         System.out.println("0. Exit");
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2-3");
+
+        acceptedChoices = new ArrayList<>(Arrays.asList(0, 1, 2, 3));
+
+        do {
+            System.out.println("Please choose a number: 0-1-2-3");
+            choice = scanner.nextInt();
+            scanner.nextLine();
+        } while (!acceptedChoices.contains(choice));
+        
+        switch (choice) {
+            case 0:
+                exit();
+                break;
+            case 1:
+                storeMenu();
+                break;
+            case 2:
+                updateStoreMenu();
+                break;
+            case 3:
+                cartMenu();
+                break;
+        }
+
     }
     public static void storeMenu() {
 
