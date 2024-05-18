@@ -1,3 +1,5 @@
+package hust.soict.dsai.aims;
+
 import java.util.Comparator;
 import hust.soict.dsai.aims.media.Media;
 
