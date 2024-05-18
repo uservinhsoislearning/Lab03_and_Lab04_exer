@@ -117,6 +117,7 @@ public class Aims {
     public static void addToStore(){
         System.out.println("Available media: ");
         availableMedia.print()
+
     }
     public static void mediaDetailsMenu() {
         System.out.println("Options: ");
