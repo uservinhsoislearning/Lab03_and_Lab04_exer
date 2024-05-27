@@ -184,6 +184,32 @@ public class Aims {
                 break;
         }
     }
+    private static void placeOrderMenu() {
+        System.out.println("Your order has been created successfully.");
+        System.out.println();
+        System.out.println("Options: ");
+        System.out.println("--------------------------------");
+        System.out.println("1. Back to menu");
+        System.out.println("0. Exit");
+        System.out.println("--------------------------------");
+
+        acceptedChoices = new ArrayList<>(Arrays.asList(0, 1));
+
+        do {
+            System.out.println("Please choose a number: 0-1");
+            choice = scanner.nextInt();
+            scanner.nextLine();
+        } while (!acceptedChoices.contains(choice));
+
+        switch (choice) {
+            case 0:
+                exit();
+                break;
+            case 1:
+                showMenu();
+                break;
+        }
+    }
     public static void removeFromCart() {
         cart.print();
         String input;
@@ -204,7 +230,7 @@ public class Aims {
         if (toRemove != null) {
             cart.removeMedia(toRemove);
         }
-        removeFromCartApp();
+        removeFromCart();
 
     }
     public static void updateStoreMenu() {
