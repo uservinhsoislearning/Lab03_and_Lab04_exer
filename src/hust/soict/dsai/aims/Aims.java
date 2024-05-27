@@ -86,6 +86,34 @@ public class Aims {
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2-3-4-5");
 
+        acceptedChoices = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4, 5));
+
+        do {
+            System.out.println("Please choose a number: 0-1-2-3-4-5");
+            choice = scanner.nextInt();
+            scanner.nextLine();
+        } while (!acceptedChoices.contains(choice));
+
+        switch (choice) {
+            case 0:
+                showMenu();
+                break;
+            case 1:
+                filterCart();
+                break;
+            case 2:
+                sortCartMenu();
+                break;
+            case 3:
+                removeFromCart();
+                break;
+            case 4:
+                playMedia();
+                break;
+            case 5:
+                placeOrderMenu();
+                break;
+        }
     }
     public static void storeMenu() {
 
@@ -164,6 +192,26 @@ public class Aims {
         System.out.println("0. Back");
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2");
+    }
+    private static void playMedia() {
+        System.out.println("All available media:");
+        availableMedia.print();
+        while (true) {
+            System.out.println();
+            System.out.println("Enter the title of media to play, or 0 to go back to store menu:");
+            String query = scanner.nextLine().trim();
+
+            if (query.equals("0")) {
+                storeMenu();
+                return;
+            }
+
+            System.out.println("Searching...");
+            Media toPlay = store.searchByTitle(query);
+            if (toPlay != null) {
+                System.out.println("Playing: " + toPlay);
+            }
+        }
     }
     public static void exit() {
         System.out.println("Exiting...");
