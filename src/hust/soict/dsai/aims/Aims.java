@@ -193,6 +193,38 @@ public class Aims {
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2");
     }
+    private static void filterCartApp() {
+        String input;
+
+        acceptedChoices = new ArrayList<>(Arrays.asList(1, 2));
+
+        do {
+            System.out.println("Choose 1 to filter by ID, 2 to filter by title");
+            choice = scanner.nextInt();
+            scanner.nextLine();
+        } while (!acceptedChoices.contains(choice));
+
+        System.out.println("Enter query:");
+
+        if (choice == 2) {
+            input = scanner.nextLine().trim();
+            cart.filter(input);
+        } else {
+            choice = scanner.nextInt();
+            scanner.nextLine();
+            System.out.println(cart.searchByID(choice));
+        }
+
+        System.out.println();
+        System.out.println("Choose 0 to go back to cart, or any other keys to continue");
+        input = scanner.nextLine().trim();
+        if (input.equals("0")) {
+            cartMenu();
+            return;
+        }
+        filterCartApp();
+
+    }
     private static void playMedia() {
         System.out.println("All available media:");
         availableMedia.print();
