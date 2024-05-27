@@ -212,7 +212,7 @@ public class Aims {
         } else {
             choice = scanner.nextInt();
             scanner.nextLine();
-            System.out.println(cart.searchByID(choice));
+            cart.search(choice);
         }
 
         System.out.println();
