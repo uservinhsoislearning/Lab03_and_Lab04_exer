@@ -50,4 +50,14 @@ public class Store extends Media{
         }
         System.out.println("---------------------------------------------------");
     }
+    public Media searchByTitle(String title) {
+        for (Media media : itemsInStore) {
+            if (media.getTitle().equalsIgnoreCase(title)) {
+                System.out.println(media);
+                return media;
+            }
+        }
+        System.out.printf("No item with title %s found.\n", title);
+        return null;
+    }
 }
