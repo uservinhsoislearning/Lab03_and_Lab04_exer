@@ -85,4 +85,19 @@ public class Cart extends Media{
             System.out.println("Your disc is not found!");
         }
     }
+    public void sort(boolean byCostTitle) {
+        if (byCostTitle) {
+            itemsOrdered.sort(Media.COMPARE_BY_COST_TITLE);
+            return;
+        }
+        itemsOrdered.sort(Media.COMPARE_BY_TITLE_COST);
+    }
+
+    public void filter(String query) {
+        for (Media media : itemsOrdered) {
+            if (media.getTitle().toLowerCase().contains(query.toLowerCase())) {
+                System.out.println(media);
+            }
+        }
+    }
 }
