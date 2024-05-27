@@ -180,9 +180,35 @@ public class Aims {
         }
     }
     public static void addToStore(){
-        System.out.println("Available media: ");
+        System.out.println("All available media:");
         availableMedia.print();
 
+        System.out.println();
+        System.out.println("Enter the title to add, or 0 to go back:");
+        String query = scanner.nextLine().trim();
+
+        if (query.equals("0")) {
+            updateStoreMenu();
+        }
+    }
+    private static void addToCart() {
+        System.out.println("All available media in store:");
+        store.print();
+
+        System.out.println();
+        System.out.println("Enter the title to add, or 0 to go back:");
+        String query = scanner.nextLine().trim();
+
+        if (query.equals("0")) {
+            storeMenu();
+        }
+
+        System.out.println("Searching...");
+        Media toAdd = availableMedia.searchByTitle(query);
+        System.out.println();
+        if (toAdd != null) {
+            store.addMedia(toAdd);
+        }
     }
     public static void mediaDetailsMenu() {
         System.out.println("Options: ");
@@ -220,7 +246,6 @@ public class Aims {
         input = scanner.nextLine().trim();
         if (input.equals("0")) {
             cartMenu();
-            return;
         }
         filterCartApp();
 
