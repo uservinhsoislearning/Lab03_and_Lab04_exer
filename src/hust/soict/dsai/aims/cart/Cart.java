@@ -59,10 +59,12 @@ public class Cart extends Media{
         System.out.printf("Total cost: [ %.2f ]\n", totalCost());
         System.out.println("**************************************************");
     }
-    public void search(String title) {
+    public Media search(String title) {
+        Media tmp = null;
         boolean found = false;
         for (int i = 0; i < itemsOrdered.size(); i++) {
             if (itemsOrdered.get(i).getTitle().equals(title)) {
+                tmp = itemsOrdered.get(i);
                 System.out.println(i+1 + ". DVD - "
                         + itemsOrdered.get(i).toString());
                 found = true;
@@ -70,12 +72,17 @@ public class Cart extends Media{
         }
         if (!found) {
             System.out.println("Your disc is not found!");
+            return null;
+        } else {
+            return tmp;
         }
     }
-    public void search(int ID) {
+    public Media search(int ID) {
+        Media tmp = null;
         boolean found = false;
         for (int i = 0; i < itemsOrdered.size(); i++) {
             if (itemsOrdered.get(i).getId() == ID) {
+                tmp = itemsOrdered.get(i);
                 System.out.println(i+1 + ". DVD - "
                         + itemsOrdered.get(i).toString());
                 found = true;
@@ -83,6 +90,9 @@ public class Cart extends Media{
         }
         if (!found) {
             System.out.println("Your disc is not found!");
+            return null;
+        } else {
+            return tmp;
         }
     }
     public void sort(boolean byCostTitle) {
