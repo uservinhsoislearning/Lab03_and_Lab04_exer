@@ -247,7 +247,7 @@ public class Aims {
         if (input.equals("0")) {
             cartMenu();
         }
-        filterCartApp();
+        filterCart();
 
     }
     private static void playMedia() {
