@@ -86,6 +86,30 @@ public class Aims {
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2-3-4");
 
+        acceptedChoices = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4));
+
+        do {
+            choice = scanner.nextInt();
+            scanner.nextLine();
+        } while (!acceptedChoices.contains(choice));
+
+        switch (choice) {
+            case 0:
+                showMenu();
+                break;
+            case 1:
+                mediaDetailsMenu();
+                break;
+            case 2:
+                addToCart();
+                break;
+            case 3:
+                playMedia();
+                break;
+            case 4:
+                cartMenu();
+                break;
+        }
     }
     public static void updateStoreMenu() {
         System.out.println("Options: ");
