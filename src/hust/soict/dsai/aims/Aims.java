@@ -152,6 +152,61 @@ public class Aims {
                 break;
         }
     }
+    private static void sortCartMenu() {
+        System.out.println("Options: ");
+        System.out.println("--------------------------------");
+        System.out.println("1. Sort by title-cost");
+        System.out.println("2. Sort by cost-title");
+        System.out.println("0. Back");
+        System.out.println("--------------------------------");
+
+        acceptedChoices = new ArrayList<>(Arrays.asList(0, 1, 2));
+
+        do {
+            System.out.println("Please choose a number: 0-1-2");
+            choice = scanner.nextInt();
+            scanner.nextLine();
+        } while (!acceptedChoices.contains(choice));
+
+        switch (choice) {
+            case 0:
+                cartMenu();
+                return;
+            case 1:
+                cart.sort(false);
+                System.out.println("Cart sorted");
+                cart.print();
+                break;
+            case 2:
+                cart.sort(true);
+                System.out.println("Cart sorted");
+                cart.print();
+                break;
+        }
+    }
+    public static void removeFromCart() {
+        cart.print();
+        String input;
+
+
+        System.out.println();
+        System.out.println("Enter the title to remove, or 0 to go back to cart");
+        input = scanner.nextLine().trim();
+
+        if (input.equals("0")) {
+            cartMenu();
+            return;
+        }
+
+        System.out.println("Searching...");
+        Media toRemove = cart.search(input);
+        System.out.println();
+        if (toRemove != null) {
+            cart.removeMedia(toRemove);
+        }
+        removeFromCartApp();
+
+    }
     public static void updateStoreMenu() {
         System.out.println("Options: ");
         System.out.println("--------------------------------");
@@ -238,7 +293,7 @@ public class Aims {
         } else {
             choice = scanner.nextInt();
             scanner.nextLine();
-            cart.search(choice);
+            System.out.println(cart.search(choice));
         }
 
         System.out.println();
