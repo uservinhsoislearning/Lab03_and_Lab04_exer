@@ -219,7 +219,7 @@ public class Aims {
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2");
     }
-    private static void filterCartApp() {
+    private static void filterCart() {
         String input;
 
         acceptedChoices = new ArrayList<>(Arrays.asList(1, 2));
