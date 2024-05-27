@@ -6,7 +6,7 @@ import java.util.*;
 public class Cart extends Media{
     public static final int MAX_NUMBERS_ORDERED = 20;
     private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
-    public void addDigitalVideoDisc(Media md) {
+    public void addMedia(Media md) {
         if (itemsOrdered.size() == MAX_NUMBERS_ORDERED) {
             System.out.println("Your cart is full!");
         } else {
@@ -14,7 +14,7 @@ public class Cart extends Media{
             System.out.println("The disc has been added.");
         }
     }
-    public void addDigitalVideoDisc(ArrayList<Media> mdlist) {
+    public void addMedia(ArrayList<Media> mdlist) {
         for (Media md: mdlist) {
             if (itemsOrdered.size() == MAX_NUMBERS_ORDERED) {
                 System.out.println("Your cart is full!");
@@ -26,7 +26,7 @@ public class Cart extends Media{
         }
     }
 
-    public void removeDigitalVideoDisc(Media md) {
+    public void removeMedia(Media md) {
         if (itemsOrdered.isEmpty()) {
             System.out.println("Your cart is empty!");
         } else {
