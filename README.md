@@ -1,1 +1,3 @@
-I have uploaded the lab04 contents in master branch, however, the name of the project is still lab03
+# Lab03 and Lab04
+This repository is an exercise for lab04 and lab05.
+Due to the imperfections and impracticality, the repo will soon be closed.
